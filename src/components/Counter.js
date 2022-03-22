@@ -6,15 +6,15 @@ import { counterActions } from '../store/index';
 const Counter = () => {
   const dispatch = useDispatch();
   // subscribing store for specified data
-  const counter = useSelector(state => state.counter);
-  const showCounter = useSelector(state => state.showCounter);
+  const counter = useSelector((state) => state.counter.counter);
+  const showCounter = useSelector((state) => state.counter.showCounter);
 
   const incrementHandler = () => {
     dispatch(counterActions.increment());
   };
 
   const increaseHandler = (amount) => {
-    dispatch(counterActions.increase(amount));
+    dispatch(counterActions.increase(amount)); // { type: SOME_UNIQUE_IDENTIFIER, payload: 5 }
   };
 
   const decrementHandler = () => {
